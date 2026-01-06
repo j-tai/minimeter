@@ -8,8 +8,11 @@
 
 void setup() {
     pinMode(PIN_BUZZER, OUTPUT);
+    pinMode(PIN_SWITCH, INPUT);
     pinMode(PIN_INPUT_1, INPUT);
     pinMode(PIN_INPUT_1_PULL, OUTPUT);
+    pinMode(PIN_INPUT_2, INPUT);
+    pinMode(PIN_INPUT_2_PULL, OUTPUT);
     pinMode(PIN_LED, OUTPUT);
 }
 
