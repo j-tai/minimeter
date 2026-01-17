@@ -20,7 +20,7 @@ void buzz_off() {
 
 uint8_t poll_input() {
     const uint8_t inverted = 0xFC
-                             | digitalRead(PIN_BUTTON_1)
-                             | (digitalRead(PIN_BUTTON_2) << 1);
+                             | digitalRead(PIN_BUTTON_MODE)
+                             | (digitalRead(PIN_BUTTON_OK) << 1);
     return ~inverted;
 }

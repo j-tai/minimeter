@@ -9,16 +9,16 @@
 
 enum Pin : uint8_t {
     PIN_BUZZER = 2,
-    PIN_BUTTON_1 = 3,
-    PIN_BUTTON_2 = 4,
+    PIN_BUTTON_OK = 3,
+    PIN_BUTTON_MODE = 4,
     PIN_LED = LED_BUILTIN,
     PIN_INPUT = A0,
     PIN_PULL = 9,
 };
 
 enum Input : uint8_t {
-    BTN_1 = 0x1,
-    BTN_2 = 0x2,
+    BTN_SEL = 0x1,
+    BTN_OK = 0x2,
 };
 
 void buzz_on();

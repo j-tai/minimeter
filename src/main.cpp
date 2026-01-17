@@ -10,7 +10,7 @@
 
 void setup() {
     pinMode(PIN_BUZZER, OUTPUT);
-    pinMode(PIN_BUTTON_1, INPUT_PULLUP);
+    pinMode(PIN_BUTTON_MODE, INPUT_PULLUP);
     pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_INPUT, INPUT);
 
@@ -22,7 +22,7 @@ uint8_t last_input = 0;
 
 bool should_switch_mode() {
     const auto input = poll_input();
-    const bool result = (input & ~last_input) & BTN_1;
+    const bool result = (input & ~last_input) & BTN_SEL;
     last_input = input;
     return result;
 }

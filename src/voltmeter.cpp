@@ -12,6 +12,7 @@ constexpr bool DEBUG = false;
 
 namespace voltmeter {
     void setup() {
+        buzz_off();
     }
 
     void loop() {

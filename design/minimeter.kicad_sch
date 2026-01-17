@@ -3122,7 +3122,7 @@
 		)
 		(uuid "3729de77-c09e-484f-9d3e-99c9fac2d98b")
 	)
-	(label "BTN_MODE"
+	(label "BTN_SEL"
 		(at 118.11 43.18 0)
 		(effects
 			(font
