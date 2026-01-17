@@ -36,7 +36,7 @@ namespace voltmeter {
         if (pullup_reading >= 1000 && pulldown_reading < 24) {
             Serial.println("High impedance");
         } else {
-            const float voltage = reading * 5.0F / 1023.0F;
+            const float voltage = 5.0F / 1023.0F * reading;
             Serial.print(voltage, 2);
             Serial.println(" V");
         }

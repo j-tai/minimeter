@@ -6,37 +6,38 @@
 
 #include "continuity.h"
 #include "hardware.h"
+#include "menu.h"
 #include "voltmeter.h"
+
+uint8_t last_mode = -1;
+menu::Item mode_selection(2);
 
 void setup() {
     pinMode(PIN_BUZZER, OUTPUT);
     pinMode(PIN_BUTTON_MODE, INPUT_PULLUP);
+    pinMode(PIN_BUTTON_OK, INPUT_PULLUP);
     pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_INPUT, INPUT);
+
+    menu::set(0, &mode_selection);
 
     Serial.begin(9600);
     Serial.println("----- RESET -----");
 }
 
-uint8_t last_input = 0;
-
-bool should_switch_mode() {
-    const auto input = poll_input();
-    const bool result = (input & ~last_input) & BTN_SEL;
-    last_input = input;
-    return result;
-}
-
 void loop() {
-    // Continuity mode
-    continuity::setup();
-    while (!should_switch_mode()) {
-        continuity::loop();
-    }
+    menu::loop();
 
-    // Voltmeter mode
-    voltmeter::setup();
-    while (!should_switch_mode()) {
+    const auto mode = mode_selection.value;
+    const auto should_setup = mode != last_mode;
+
+    if (mode == 0) {
+        if (should_setup)
+            continuity::setup();
+        continuity::loop();
+    } else if (mode == 1) {
+        if (should_setup)
+            voltmeter::setup();
         voltmeter::loop();
     }
 }
