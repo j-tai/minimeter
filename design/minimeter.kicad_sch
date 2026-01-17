@@ -3122,7 +3122,7 @@
 		)
 		(uuid "3729de77-c09e-484f-9d3e-99c9fac2d98b")
 	)
-	(label "BTN_1"
+	(label "BTN_MODE"
 		(at 118.11 43.18 0)
 		(effects
 			(font
@@ -3162,7 +3162,7 @@
 		)
 		(uuid "627f6160-c2b5-4496-9614-87d577858665")
 	)
-	(label "BTN_2"
+	(label "BTN_OK"
 		(at 118.11 40.64 0)
 		(effects
 			(font
@@ -3434,7 +3434,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Horizontal"
 			(at 35.56 58.42 0)
 			(effects
 				(font
