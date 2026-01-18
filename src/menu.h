@@ -9,11 +9,41 @@
 
 namespace menu {
 
+/**
+ * Represents a selectable item with multiple choices.
+ *
+ * Each item maintains a value, corresponding to the current selected choice,
+ * and a set of choices, provided as a character array.
+ */
 struct Item {
-    uint8_t value = 0;
-    uint8_t count = 1;
+    static constexpr uint8_t CHOICE_LEN = 6;
 
-    explicit Item(const uint8_t count) : count(count) {}
+    /// The currently selected index.
+    uint8_t value = 0;
+    const char* choices = nullptr;
+
+    explicit Item() : choices(PSTR("")) {}
+    explicit Item(const char* choices) : choices(choices) {}
+
+    /**
+     * Retrieves the currently selected choice from the list of choices.
+     *
+     * @return A pointer to program space, representing the current choice
+     * string.
+     */
+    const char* get_current_choice() const {
+        return choices + value * CHOICE_LEN;
+    }
+
+    /**
+     * Retrieves the currently selected choice and writes it into the provided
+     * output buffer.
+     *
+     * @param out A character buffer to store the current choice string. The
+     * buffer must have space for at least 7 characters (6 for the choice and 1
+     * for the null terminator).
+     */
+    void read_current_choice(char out[CHOICE_LEN + 1]) const;
 };
 
 void set(uint8_t index, Item* item);

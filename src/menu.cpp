@@ -14,6 +14,40 @@ Item* items[MAX_ITEMS] = {nullptr};
 uint8_t selected_index = 0;
 uint8_t last_input = 0;
 
+void Item::read_current_choice(char out[7]) const {
+    strncpy_P(out, get_current_choice(), CHOICE_LEN);
+    out[CHOICE_LEN] = '\0';
+}
+
+namespace {
+bool choice_is_overflowed(const Item& item) {
+    auto chr = pgm_read_byte_near(item.get_current_choice());
+    return chr == '\0';
+}
+
+void print_menu() {
+    for (uint8_t i = 0; i < MAX_ITEMS; i++) {
+        const Item* item = items[i];
+        if (item == nullptr) {
+            break;
+        }
+
+        char choice[Item::CHOICE_LEN + 1];
+        item->read_current_choice(choice);
+
+        if (selected_index == i) {
+            Serial.print(">");
+        } else {
+            Serial.print(" ");
+        }
+        Serial.print("[");
+        Serial.print(choice);
+        Serial.print("] ");
+    }
+    Serial.println();
+}
+} // namespace
+
 void set(const uint8_t index, Item* item) { items[index] = item; }
 
 void loop() {
@@ -32,10 +66,14 @@ void loop() {
         Item* item = items[selected_index];
         if (item != nullptr) {
             item->value++;
-            if (item->value >= item->count) {
+            if (choice_is_overflowed(*item)) {
                 item->value = 0;
             }
         }
+    }
+
+    if (new_input) {
+        print_menu();
     }
 
     last_input = input;

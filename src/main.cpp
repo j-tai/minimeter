@@ -10,7 +10,7 @@
 #include "voltmeter.h"
 
 uint8_t last_mode = -1;
-menu::Item mode_selection(2);
+menu::Item mode_selection;
 
 void setup() {
     pinMode(PIN_BUZZER, OUTPUT);
@@ -19,10 +19,11 @@ void setup() {
     pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_INPUT, INPUT);
 
+    mode_selection.choices = PSTR("ContinVoltag");
     menu::set(0, &mode_selection);
 
     Serial.begin(9600);
-    Serial.println("----- RESET -----");
+    Serial.println(F("----- RESET -----"));
 }
 
 void loop() {
