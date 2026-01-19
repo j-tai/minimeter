@@ -6,9 +6,9 @@
 #define MINIMETER_CONTINUITY_H
 
 namespace continuity {
-    void setup();
+void setup();
 
-    void loop();
-}
+void loop();
+} // namespace continuity
 
 #endif

@@ -8,6 +8,14 @@
 
 constexpr unsigned int BUZZ_FREQUENCY = 1000;
 
+void reset_pins() {
+    buzz_off();
+    pinMode(PIN_INPUT, INPUT);
+    pinMode(PIN_PULL_10K, INPUT);
+    pinMode(PIN_PULL_1K, INPUT);
+    pinMode(PIN_PULL_110, INPUT);
+}
+
 void buzz_on() {
     digitalWrite(PIN_LED, HIGH);
     tone(PIN_BUZZER, BUZZ_FREQUENCY);

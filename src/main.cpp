@@ -31,6 +31,7 @@ void loop() {
 
     const auto mode = mode_selection.value;
     const auto should_setup = mode != last_mode;
+    last_mode = mode;
 
     if (mode == 0) {
         if (should_setup)
