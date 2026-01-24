@@ -7,6 +7,7 @@
 #include <Arduino.h>
 
 #include "hardware.h"
+#include "lcd.h"
 #include "menu.h"
 
 namespace {
@@ -54,6 +55,7 @@ float sum_and_clear_buffer() {
 
 namespace voltmeter {
 void setup() {
+    lcd.clear();
     mode.choices = PSTR("250VDC 50VDC 10VDC");
     menu::set(1, &mode);
     counter = 0;
@@ -65,9 +67,15 @@ void loop() {
 
     if (counter == 0) {
         // Report the measurement
+        lcd.setCursor(5, 0);
         const float voltage = sum_and_clear_buffer() * factor;
-        Serial.print(voltage, mode.value);
-        Serial.println(" V");
+        char buffer[8];
+        dtostrf(voltage, 4, mode.value, buffer);
+        for (uint8_t i = strlen(buffer); i < 4; i++) {
+            lcd.print(" ");
+        }
+        lcd.print(buffer);
+        lcd.print(" V");
     }
 
     const uint8_t index = counter & INDEX_MASK;

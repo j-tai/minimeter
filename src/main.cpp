@@ -6,6 +6,7 @@
 
 #include "continuity.h"
 #include "hardware.h"
+#include "lcd.h"
 #include "menu.h"
 #include "voltmeter.h"
 
@@ -24,6 +25,8 @@ void setup() {
 
     Serial.begin(9600);
     Serial.println(F("----- RESET -----"));
+
+    lcd_init();
 }
 
 void loop() {
