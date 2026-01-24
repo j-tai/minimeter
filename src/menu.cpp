@@ -8,16 +8,16 @@
 #include "lcd.h"
 
 namespace menu {
-constexpr uint8_t MAX_ITEMS = 2;
+constexpr uint8_t MAX_ITEMS = 4;
 
 Item* items[MAX_ITEMS] = {nullptr};
 uint8_t selected_index = 0;
 uint8_t last_input = 0;
 bool is_dirty = true;
 
-void Item::read_current_choice(char out[7]) const {
-    strncpy_P(out, get_current_choice(), CHOICE_LEN);
-    out[CHOICE_LEN] = '\0';
+void Item::read_current_choice(char* out) const {
+    strncpy_P(out, get_current_choice(), width);
+    out[width] = '\0';
 }
 
 namespace {
@@ -32,11 +32,10 @@ void print_menu() {
     for (uint8_t i = 0; i < MAX_ITEMS; i++) {
         const Item* item = items[i];
         if (item == nullptr) {
-            lcd.print("        ");
-            continue;
+            break;
         }
 
-        char choice[Item::CHOICE_LEN + 1];
+        char choice[16];
         item->read_current_choice(choice);
 
         if (selected_index == i) {
@@ -51,6 +50,8 @@ void print_menu() {
             lcd.print(" ");
         }
     }
+
+    lcd.print("                ");
 }
 } // namespace
 
@@ -85,7 +86,7 @@ void loop() {
             if (choice_is_overflowed(*item)) {
                 item->value = 0;
             }
-        is_dirty = true;
+            is_dirty = true;
         }
     }
 

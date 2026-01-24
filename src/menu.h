@@ -16,14 +16,14 @@ namespace menu {
  * and a set of choices, provided as a character array.
  */
 struct Item {
-    static constexpr uint8_t CHOICE_LEN = 6;
-
     /// The currently selected index.
     uint8_t value = 0;
+    uint8_t width = 1;
     const char* choices = nullptr;
 
     explicit Item() : choices(PSTR("")) {}
-    explicit Item(const char* choices) : choices(choices) {}
+    explicit Item(const uint8_t width, const char* choices)
+        : width(width), choices(choices) {}
 
     /**
      * Retrieves the currently selected choice from the list of choices.
@@ -31,9 +31,7 @@ struct Item {
      * @return A pointer to program space, representing the current choice
      * string.
      */
-    const char* get_current_choice() const {
-        return choices + value * CHOICE_LEN;
-    }
+    const char* get_current_choice() const { return choices + value * width; }
 
     /**
      * Retrieves the currently selected choice and writes it into the provided
@@ -43,7 +41,7 @@ struct Item {
      * buffer must have space for at least 7 characters (6 for the choice and 1
      * for the null terminator).
      */
-    void read_current_choice(char out[CHOICE_LEN + 1]) const;
+    void read_current_choice(char* out) const;
 };
 
 void set(uint8_t index, Item* item);

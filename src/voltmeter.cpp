@@ -56,7 +56,7 @@ float sum_and_clear_buffer() {
 namespace voltmeter {
 void setup() {
     lcd.clear();
-    mode.choices = PSTR("250VDC 50VDC 10VDC");
+    mode = menu::Item(7, PSTR("250V DC 50V DC 10V DC"));
     menu::set(1, &mode);
     counter = 0;
     sum_and_clear_buffer();

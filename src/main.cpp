@@ -20,7 +20,7 @@ void setup() {
     pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_INPUT, INPUT);
 
-    mode_selection.choices = PSTR("ContinVoltag");
+    mode_selection = menu::Item(4, PSTR("ContVolt"));
     menu::set(0, &mode_selection);
 
     Serial.begin(9600);
