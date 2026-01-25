@@ -3288,7 +3288,7 @@
 		)
 		(uuid "592e26b9-0117-4b86-bf4a-74c3c604547d")
 	)
-	(label "PULL_10K"
+	(label "PULL_4.7K"
 		(at 123.19 77.47 90)
 		(effects
 			(font
@@ -4851,7 +4851,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "4.7K"
 			(at 121.158 86.106 90)
 			(effects
 				(font

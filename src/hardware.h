@@ -8,7 +8,7 @@
 #include <Arduino.h>
 
 #define R_INPUT 10000.0F
-#define R_PULL_10K 10000.0F
+#define R_PULL_4K7 4700.0F
 #define R_PULL_1K 1000.0F
 #define R_PULL_110 110.0F
 
@@ -18,7 +18,7 @@ enum Pin : uint8_t {
     PIN_BUTTON_MODE = 4,
     PIN_LED = LED_BUILTIN,
     PIN_INPUT = A0,
-    PIN_PULL_10K = 9,
+    PIN_PULL_4K7 = 9,
     PIN_PULL_1K = 8,
     PIN_PULL_110 = 7,
 };
