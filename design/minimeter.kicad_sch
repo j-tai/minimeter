@@ -5,9 +5,9 @@
 	(uuid "c5f248fb-7552-458c-b0e8-c4eefd226b83")
 	(paper "A4")
 	(title_block
-		(title "Minimeter")
-		(date "2026-01-21")
-		(rev "v2")
+		(title "MiniMeter")
+		(date "2026-01-28")
+		(rev "v3")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
@@ -562,7 +562,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Small_Filled"
+		(symbol "Device:D_Schottky_Small_Filled"
 			(pin_numbers
 				(hide yes)
 			)
@@ -582,8 +582,8 @@
 					(justify left)
 				)
 			)
-			(property "Value" "D_Small_Filled"
-				(at -3.81 -2.032 0)
+			(property "Value" "D_Schottky_Small_Filled"
+				(at -7.112 -2.032 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -609,7 +609,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Diode, small symbol, filled shape"
+			(property "Description" "Schottky diode, small symbol, filled shape"
 				(at 0 0 0)
 				(effects
 					(font
@@ -618,25 +618,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
+			(property "ki_keywords" "diode Schottky"
 				(at 0 0 0)
 				(effects
 					(font
@@ -654,13 +636,13 @@
 					(hide yes)
 				)
 			)
-			(symbol "D_Small_Filled_0_1"
+			(symbol "D_Schottky_Small_Filled_0_1"
 				(polyline
 					(pts
-						(xy -0.762 0) (xy 0.762 0)
+						(xy -1.27 0.762) (xy -1.27 1.016) (xy -0.762 1.016) (xy -0.762 -1.016) (xy -0.254 -1.016) (xy -0.254 -0.762)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -669,10 +651,10 @@
 				)
 				(polyline
 					(pts
-						(xy -0.762 -1.016) (xy -0.762 1.016)
+						(xy -0.762 0) (xy 0.762 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -692,7 +674,7 @@
 					)
 				)
 			)
-			(symbol "D_Small_Filled_1_1"
+			(symbol "D_Schottky_Small_Filled_1_1"
 				(pin passive line
 					(at -2.54 0 0)
 					(length 1.778)
@@ -2497,22 +2479,10 @@
 		(uuid "eaabd258-8f2f-4ae7-ac2e-86bbf4efc63d")
 	)
 	(junction
-		(at 133.35 95.25)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "099e9e6d-2560-4522-91db-418802c8fa04")
-	)
-	(junction
 		(at 128.27 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "14ed4b4c-bd78-40b5-a342-895e171c0ac6")
-	)
-	(junction
-		(at 133.35 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "202b1d50-557c-44a2-be74-b8765ad106d8")
 	)
 	(junction
 		(at 123.19 95.25)
@@ -2800,7 +2770,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 50.8) (xy 133.35 80.01)
+			(xy 133.35 50.8) (xy 133.35 85.09)
 		)
 		(stroke
 			(width 0)
@@ -3060,16 +3030,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 80.01) (xy 133.35 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0ec9d5d-d0d2-43eb-8d0d-c33d83ad557f")
-	)
-	(wire
-		(pts
 			(xy 165.1 60.96) (xy 171.45 60.96)
 		)
 		(stroke
@@ -3087,16 +3047,6 @@
 			(type default)
 		)
 		(uuid "c2e84605-49b6-4e6f-90ab-e4f6ab0837bc")
-	)
-	(wire
-		(pts
-			(xy 138.43 80.01) (xy 133.35 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c690c81c-811d-470c-a8a9-6b7b033f2190")
 	)
 	(wire
 		(pts
@@ -3170,16 +3120,6 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 90.17) (xy 138.43 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "de35f74c-257a-453b-bd08-f405b53cdf61")
-	)
-	(wire
-		(pts
 			(xy 36.83 91.44) (xy 40.64 91.44)
 		)
 		(stroke
@@ -3187,16 +3127,6 @@
 			(type default)
 		)
 		(uuid "e221f666-a142-4e94-8793-da7aca9fd2b9")
-	)
-	(wire
-		(pts
-			(xy 138.43 85.09) (xy 138.43 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e666ea44-737f-4ba8-bf38-036916225fa6")
 	)
 	(wire
 		(pts
@@ -3247,16 +3177,6 @@
 			(type default)
 		)
 		(uuid "fa8c1c5f-c20a-4343-b49f-fe94071da4f8")
-	)
-	(wire
-		(pts
-			(xy 138.43 95.25) (xy 133.35 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc7f127c-1b83-4c6d-953e-0950b82564e0")
 	)
 	(label "SPKR"
 		(at 118.11 38.1 0)
@@ -3357,73 +3277,6 @@
 			(justify left bottom)
 		)
 		(uuid "deb5f1a3-65d2-4a32-9214-2176299b3a8c")
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 138.43 87.63 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0909050d-34f1-46c3-8ef7-9f2fc23060b0")
-		(property "Reference" "R5"
-			(at 136.398 90.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220"
-			(at 136.398 86.106 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "882cd357-fd00-4682-8589-aab3604b5407")
-		)
-		(pin "2"
-			(uuid "31e1b951-1a0e-4ee9-ac18-c8e935e89dcd")
-		)
-		(instances
-			(project "minimeter"
-				(path "/c5f248fb-7552-458c-b0e8-c4eefd226b83"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "arduino-library:Arduino_Nano_Socket")
@@ -4052,7 +3905,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small_Filled")
+		(lib_id "Device:D_Schottky_Small_Filled")
 		(at 43.18 96.52 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4097,7 +3950,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode, small symbol, filled shape"
+		(property "Description" "Schottky diode, small symbol, filled shape"
 			(at 43.18 96.52 0)
 			(effects
 				(font
@@ -4361,7 +4214,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.0mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm"
 			(at 157.48 22.86 0)
 			(effects
 				(font
@@ -4420,7 +4273,7 @@
 				)
 			)
 		)
-		(property "Value" "220"
+		(property "Value" "100"
 			(at 131.318 86.106 90)
 			(effects
 				(font
@@ -4609,7 +4462,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small_Filled")
+		(lib_id "Device:D_Schottky_Small_Filled")
 		(at 40.64 86.36 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4654,7 +4507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode, small symbol, filled shape"
+		(property "Description" "Schottky diode, small symbol, filled shape"
 			(at 40.64 86.36 0)
 			(effects
 				(font

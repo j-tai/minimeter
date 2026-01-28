@@ -40,9 +40,9 @@ float setup_pins() {
         return calculate_factor(R_PULL_1K);
     }
 
-    pinMode(PIN_PULL_110, OUTPUT);
-    digitalWrite(PIN_PULL_110, reference);
-    return calculate_factor(R_PULL_110);
+    pinMode(PIN_PULL_100, OUTPUT);
+    digitalWrite(PIN_PULL_100, reference);
+    return calculate_factor(R_PULL_100);
 }
 } // namespace
 

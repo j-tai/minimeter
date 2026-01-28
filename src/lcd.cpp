@@ -7,10 +7,8 @@
 #include <Arduino.h>
 #include <LiquidCrystal_I2C.h>
 
-namespace {
 constexpr bool DEBUG = false;
 constexpr uint8_t LCD_ADDRESS = 0x27;
-} // namespace
 
 LiquidCrystal_I2C lcd(LCD_ADDRESS, 16, 2);
 

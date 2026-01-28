@@ -7,11 +7,7 @@
 
 #include <Arduino.h>
 
-#define R_INPUT 10000.0F
-#define R_PULL_4K7 4700.0F
-#define R_PULL_1K 1000.0F
-#define R_PULL_110 110.0F
-
+/// Pin numbers.
 enum Pin : uint8_t {
     PIN_BUZZER = 2,
     PIN_BUTTON_OK = 3,
@@ -20,8 +16,14 @@ enum Pin : uint8_t {
     PIN_INPUT = A0,
     PIN_PULL_4K7 = 9,
     PIN_PULL_1K = 8,
-    PIN_PULL_110 = 7,
+    PIN_PULL_100 = 7,
 };
+
+/// Resistance of the input pin.
+constexpr float R_INPUT = 10000.0F;
+constexpr float R_PULL_4K7 = 4700.0F;
+constexpr float R_PULL_1K = 1000.0F;
+constexpr float R_PULL_100 = 100.0F;
 
 enum Input : uint8_t {
     BTN_SEL = 0x1,
