@@ -2,7 +2,7 @@
 
 MiniMeter is a tiny multimeter running on Arduino.
 
-Currently under development. Currently, it only supports continuity testing.
+Currently, it supports continuity testing and voltage measurement.
 
 ## Circuit
 
