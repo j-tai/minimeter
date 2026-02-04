@@ -18,6 +18,7 @@ bool last_value = false;
 
 void setup() {
     lcd.clear();
+    reset_pins();
     menu::set(1, nullptr);
     last_value = false;
     pinMode(PIN_PULL_4K7, OUTPUT);
