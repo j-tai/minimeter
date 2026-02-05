@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "MiniMeter")
-		(date "2026-02-03")
-		(rev "v4")
+		(date "2026-02-04")
+		(rev "v5")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
@@ -3542,7 +3542,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "LED_THT:LED_D5.0mm"
 			(at 196.85 114.3 0)
 			(effects
 				(font
@@ -5032,7 +5032,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3386F_Vertical"
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3386P_Vertical"
 			(at 195.58 45.72 0)
 			(effects
 				(font
